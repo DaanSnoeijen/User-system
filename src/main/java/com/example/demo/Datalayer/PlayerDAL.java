@@ -1,4 +1,6 @@
-package com.example.demo.Backlayer;
+package com.example.demo.Datalayer;
+
+import com.example.demo.Backlayer.Player;
 
 public class PlayerDAL implements IPlayer {
     private PlayerDTO playerDTO;

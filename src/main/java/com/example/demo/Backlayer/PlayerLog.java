@@ -1,5 +1,8 @@
 package com.example.demo.Backlayer;
 
+import com.example.demo.Datalayer.IPlayer;
+import com.example.demo.Datalayer.PlayerDAL;
+
 public class PlayerLog {
     private Player player;
 
