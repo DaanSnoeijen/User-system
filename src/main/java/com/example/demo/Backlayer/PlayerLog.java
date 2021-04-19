@@ -18,9 +18,9 @@ public class PlayerLog {
     }
 
     public Player LogIn(String username, String password){
-        player = new Player(username, password);
+        Player getPlayer = new Player(username, password);
 
-        iPlayer.GetPlayer(player);
+        player = new Player(iPlayer.GetPlayer(getPlayer).username, iPlayer.GetPlayer(getPlayer).password);
 
         return player;
     }

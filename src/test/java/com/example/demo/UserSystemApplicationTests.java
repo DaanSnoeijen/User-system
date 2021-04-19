@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserSystemApplicationTests {
+class PlayerLogTests {
 
     @Test
     void playerRegisterCorrect() {
@@ -48,19 +48,37 @@ class UserSystemApplicationTests {
     void PlayerLogCorrect() {
         //Arrange
         PlayerLog playerLog = new PlayerLog();
+        Player player = new Player("Bob", "BobsPassword");
         
         //Act
+        Player playerCheck = new Player(
+                playerLog.LogIn(player.username, player.password).username,
+                playerLog.LogIn(player.username, player.password).password);
         
         //Assert
+        if (player.username == playerCheck.username
+                && player.password == playerCheck.password)
+            assert true;
+        else assert false;
     }
 
     @Test
     void PlayerLogFalse() {
+        /*
         //Arrange
         PlayerLog playerLog = new PlayerLog();
+        Player player = new Player("Bob", "BobsPassword");
 
         //Act
+        Player playerCheck = new Player(
+                playerLog.LogIn(player.username, player.password).username,
+                playerLog.LogIn(player.username, player.password).password);
 
         //Assert
+        if (player.username != playerCheck.username
+                && player.password != playerCheck.password)
+            assert true;
+        else assert false;
+         */
     }
 }

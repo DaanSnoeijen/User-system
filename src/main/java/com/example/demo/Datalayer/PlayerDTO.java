@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PlayerDTO {
     public String username;
-    private String password;
+    public String password;
     public int elo;
     public List<String> PlayedGames;
 
