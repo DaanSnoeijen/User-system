@@ -3,6 +3,8 @@ package com.example.demo.Backlayer;
 import com.example.demo.Datalayer.IPlayer;
 import com.example.demo.Datalayer.PlayerDAL;
 
+import java.util.ArrayList;
+
 public class PlayerLog {
     private Player player;
 
@@ -11,6 +13,7 @@ public class PlayerLog {
     public Player Register(String username, String password){
         player = new Player(username, password);
         player.elo = 800;
+        player.PlayedGames = new ArrayList<String>();
 
         iPlayer.AddPlayer(player);
 

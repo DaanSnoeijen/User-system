@@ -9,14 +9,9 @@ public class PlayerLoggIn {
     int elo;
     List<String> PlayedGames;
 
-    public PlayerLoggIn(Player player){
-        username = player.username;
-        elo = player.elo;
-    }
-
-    public List<String> ReturnPlayedGames(Player player){
-        PlayedGames = player.PlayedGames;
-
-        return PlayedGames;
+    public PlayerLoggIn(String Username, int Elo, List<String> playedGames){
+        username = Username;
+        elo = Elo;
+        PlayedGames = playedGames;
     }
 }
