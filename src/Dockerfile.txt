@@ -1,2 +1,3 @@
 FROM java:15
-RUN /main
+COPY User-system
+RUN User-system
