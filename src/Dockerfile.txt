@@ -1,4 +1,3 @@
 FROM java:15
-LABEL maintainer="bigppstalemate.com"
 EXPOSE 3000
 RUN usersystem
