@@ -2,6 +2,8 @@ package com.example.demo.Datalayer;
 
 import com.example.demo.Backlayer.Player;
 
+import javax.persistence.EntityManager;
+
 public class PlayerDAL implements IPlayer {
     private PlayerDTO playerDTO;
 
