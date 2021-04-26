@@ -12,21 +12,21 @@ public class PlayerController {
     PlayerLog playerLog = new PlayerLog();
 
     @GetMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
-    public PlayerLoggIn ReturnPlayer(@RequestBody String Username, @RequestBody String Password){
+    public PlayerLoggIn ReturnPlayer(@RequestBody bs bs){
         player = new PlayerLoggIn(
-                playerLog.LogIn(Username, Password).username,
-                playerLog.LogIn(Username, Password).elo,
-                playerLog.LogIn(Username, Password).PlayedGames);
+                playerLog.LogIn(bs.Username, bs.Password).username,
+                playerLog.LogIn(bs.Username, bs.Password).elo,
+                playerLog.LogIn(bs.Username, bs.Password).PlayedGames);
 
         return player;
     }
 
     @PostMapping(value="/postPlayer", consumes = "application/json", produces = "application/json")
-    public PlayerLoggIn AddPlayer(@RequestBody String Username, @RequestBody String Password){
+    public PlayerLoggIn AddPlayer(@RequestBody bs bs){
         player = new PlayerLoggIn(
-                playerLog.Register(Username, Password).username,
-                playerLog.Register(Username, Password).elo,
-                playerLog.Register(Username, Password).PlayedGames);
+                playerLog.Register(bs.Username, bs.Password).username,
+                playerLog.Register(bs.Username, bs.Password).elo,
+                playerLog.Register(bs.Username, bs.Password).PlayedGames);
 
         return player;
     }
