@@ -1,10 +1,13 @@
 package com.example.demo.Datalayer;
 
 import com.example.demo.Backlayer.Player;
+import org.hibernate.engine.spi.SessionDelegatorBaseImpl;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 public class PlayerDAL implements IPlayer {
+
     private PlayerDTO playerDTO;
 
     public PlayerDTO GetPlayer(Player player){
