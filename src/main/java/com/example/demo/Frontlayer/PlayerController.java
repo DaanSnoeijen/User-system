@@ -14,7 +14,7 @@ public class PlayerController {
 
     @GetMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
     public PlayerLoggIn ReturnPlayer(@RequestBody LogInData logInData){
-        Player p = playerLog.Register(logInData.Username, logInData.Password);
+        Player p = playerLog.LogIn(logInData.Username, logInData.Password);
 
         player = new PlayerLoggIn(p.username, p.elo, p.PlayedGames);
 

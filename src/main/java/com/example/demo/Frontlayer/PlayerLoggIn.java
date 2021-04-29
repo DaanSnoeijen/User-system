@@ -5,7 +5,7 @@ import com.example.demo.Backlayer.Player;
 import java.util.List;
 
 public class PlayerLoggIn {
-    String username;
+    public String username;
     int elo;
     List<String> PlayedGames;
 
