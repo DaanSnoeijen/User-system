@@ -1,6 +1,7 @@
 package com.example.demo.Datalayer;
 
-import org.apache.catalina.User;
+import com.example.demo.Backlayer.Player;
+import com.example.demo.Entity.PlayerEntity;
 
 import java.util.List;
 
@@ -10,8 +11,16 @@ public class PlayerDTO {
     public int elo;
     public List<String> PlayedGames;
 
-    public PlayerDTO(String Username, String Password){
-        username = Username;
-        password = Password;
+    public PlayerDTO(Player player){
+        username = player.username;
+        password = player.password;
+        elo = player.elo;
+        PlayedGames = player.PlayedGames;
+    }
+
+    public PlayerDTO(PlayerEntity player){
+        username = player.username;
+        elo = player.elo;
+        PlayedGames = player.PlayedGames;
     }
 }

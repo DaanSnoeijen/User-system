@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.Backlayer.Player;
 import com.example.demo.Datalayer.IPlayer;
 import com.example.demo.Datalayer.PlayerDAL;
+import com.example.demo.Datalayer.PlayerDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,10 +15,11 @@ public class PlayerDALTests {
         //Arrange
         IPlayer iPlayer = new PlayerDAL();
         Player player = new Player("Bob", "BobsPassword");
+        PlayerDTO playerDTO = new PlayerDTO(player);
 
         //Act && Assert
         try {
-            iPlayer.GetPlayer(player);
+            iPlayer.GetPlayer(playerDTO);
             assert true;
         }
         catch (Exception exception){
@@ -30,10 +32,11 @@ public class PlayerDALTests {
         //Arrange
         IPlayer iPlayer = new PlayerDAL();
         Player player = new Player("Bob", "BobsPassword");
+        PlayerDTO playerDTO = new PlayerDTO(player);
 
         //Act && Assert
         try {
-            iPlayer.AddPlayer(player);
+            iPlayer.AddPlayer(playerDTO);
             assert true;
         }
         catch (Exception exception){

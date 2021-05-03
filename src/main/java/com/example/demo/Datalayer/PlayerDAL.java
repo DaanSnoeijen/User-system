@@ -1,24 +1,24 @@
 package com.example.demo.Datalayer;
 
-import com.example.demo.Backlayer.Player;
-import org.hibernate.engine.spi.SessionDelegatorBaseImpl;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import com.example.demo.Entity.PlayerEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public class PlayerDAL implements IPlayer {
 
     private PlayerDTO playerDTO;
+    PlayerRepo repo;
 
-    public PlayerDTO GetPlayer(Player player){
-        playerDTO = new PlayerDTO(player.username, player.password);
+    public PlayerDTO GetPlayer(PlayerDTO player){
+        PlayerEntity playerEntity = repo.FindByUserNameAndPassword(player.username, player.password);
+
+        playerDTO = new PlayerDTO(playerEntity);
 
         return playerDTO;
     }
 
-    public void AddPlayer(Player player){
-        playerDTO = new PlayerDTO(player.username, player.password);
-        playerDTO.elo = player.elo;
+    public void AddPlayer(PlayerDTO player){
+        PlayerEntity playerEntity = new PlayerEntity(player);
 
+        repo.save(playerEntity);
     }
 }
