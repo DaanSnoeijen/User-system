@@ -2,6 +2,7 @@ package com.example.demo.Frontlayer;
 
 import java.util.List;
 
+//Player viewmodel voor data van backend naar frontend
 public class PlayerLoggIn {
     public String username;
     int elo;

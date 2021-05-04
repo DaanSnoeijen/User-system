@@ -12,11 +12,13 @@ public class Player {
     public int elo;
     public List<String> PlayedGames;
 
+    //Constructor voor inloggen
     public Player(String playerUsername, String playerPassword) {
         username = playerUsername;
         password = playerPassword;
     }
 
+    //Constructor voor DTO
     public Player (PlayerDTO playerDTO){
         username = playerDTO.username;
         password = playerDTO.password;

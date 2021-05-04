@@ -11,10 +11,12 @@ public class PlayerLog {
     private Player player;
     IPlayer iPlayer;
 
+    //Constructor voor het aanmaken van de benodigde classes
     public PlayerLog(){
         iPlayer = new PlayerDAL();
     }
 
+    //Nieuwe spelers aanmaken van een preset ELO
     public Player Register(String username, String password){
         player = new Player(username, password);
         player.elo = 800;
@@ -27,6 +29,7 @@ public class PlayerLog {
         return player;
     }
 
+    //Een speler inloggen
     public Player LogIn(String username, String password){
         Player getPlayer = new Player(username, password);
         PlayerDTO playerDTO = new PlayerDTO(getPlayer);

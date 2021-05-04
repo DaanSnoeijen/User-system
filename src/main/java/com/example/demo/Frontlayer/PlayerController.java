@@ -4,6 +4,7 @@ import com.example.demo.Backlayer.Player;
 import com.example.demo.Backlayer.PlayerLog;
 import org.springframework.web.bind.annotation.*;
 
+//Controller voor de connectie met de frontend en backend
 @CrossOrigin
 @RestController
 @RequestMapping("api/player")
@@ -12,6 +13,7 @@ public class PlayerController {
 
     PlayerLog playerLog = new PlayerLog();
 
+    //Get request voor het inloggen van een speler
     @GetMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
     public PlayerLoggIn ReturnPlayer(@RequestBody LogInData logInData){
         Player p = playerLog.LogIn(logInData.Username, logInData.Password);
@@ -21,6 +23,7 @@ public class PlayerController {
         return player;
     }
 
+    //Post request voor het opslaan van een speler
     @PostMapping(value="/postPlayer", consumes = "application/json")
     public void AddPlayer(@RequestBody LogInData logInData){
         playerLog.Register(logInData.Username, logInData.Password);

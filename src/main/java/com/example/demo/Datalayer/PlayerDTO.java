@@ -5,12 +5,14 @@ import com.example.demo.Entity.PlayerEntity;
 
 import java.util.List;
 
+//Data transfer object
 public class PlayerDTO {
     public String username;
     public String password;
     public int elo;
     public List<String> PlayedGames;
 
+    //Constructor voor player
     public PlayerDTO(Player player){
         username = player.username;
         password = player.password;
@@ -18,6 +20,7 @@ public class PlayerDTO {
         PlayedGames = player.PlayedGames;
     }
 
+    //Constructor voor player entity
     public PlayerDTO(PlayerEntity player){
         username = player.username;
         elo = player.elo;
