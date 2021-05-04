@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Player {
 
-    public Long ID;
+    public Long ID = 0L;
     public String username;
     public String password;
     public int elo;
@@ -20,6 +20,7 @@ public class Player {
 
     //Constructor voor DTO
     public Player (PlayerDTO playerDTO){
+        ID = playerDTO.ID;
         username = playerDTO.username;
         password = playerDTO.password;
         elo = playerDTO.elo;

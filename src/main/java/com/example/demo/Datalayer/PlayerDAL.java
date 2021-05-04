@@ -3,24 +3,58 @@ package com.example.demo.Datalayer;
 import com.example.demo.Entity.PlayerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
 public class PlayerDAL implements IPlayer {
 
     private PlayerDTO playerDTO;
-    PlayerRepo repo;
+
+    private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("user-system");
+    private EntityManager em = null;
+    private EntityTransaction transaction = null;
 
     //Spelers ophalen uit de database
     public PlayerDTO GetPlayer(PlayerDTO player){
-        PlayerEntity playerEntity = repo.FindByUserNameAndPassword(player.username, player.password);
+        em = factory.createEntityManager();
+        transaction = em.getTransaction();
 
-        playerDTO = new PlayerDTO(playerEntity);
+        try{
+            transaction.begin();
+            em.persist(new PlayerEntity(player));
+            transaction.commit();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            transaction.rollback();
+        }
+        finally {
+            em.close();
+            transaction = null;
 
-        return playerDTO;
+            return playerDTO;
+        }
     }
 
     //Spelers toevoegen aan de database
     public void AddPlayer(PlayerDTO player){
-        PlayerEntity playerEntity = new PlayerEntity(player);
+        em = factory.createEntityManager();
+        transaction = em.getTransaction();
 
-        repo.save(playerEntity);
+        try{
+            transaction.begin();
+            em.persist(new PlayerEntity(player));
+            transaction.commit();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            transaction.rollback();
+        }
+        finally {
+            em.close();
+            transaction = null;
+        }
     }
 }
