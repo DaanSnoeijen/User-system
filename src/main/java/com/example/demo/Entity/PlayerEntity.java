@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 //Player entity voor het mappen van de player data naar een database
@@ -14,20 +15,13 @@ public class PlayerEntity implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(updatable = false, nullable = false)
-    private Long playerId;
-
-    @Column(nullable = false)
+    private Long id;
     private String username;
-
-    @Column(nullable = false)
     private String password;
-
-    @Column(nullable = false)
     private int elo;
 
     @ElementCollection
-    private List<String> PlayedGames;
+    private Collection<String> PlayedGames;
 
     //Constructor voor de player DTO
     public PlayerEntity(PlayerDTO player) {
