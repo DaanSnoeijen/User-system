@@ -1,0 +1,9 @@
+mkdir example
+cd example
+
+touch somefile.txt
+
+docker build -t User-system
+FROM java:15
+COPY somefile.txt
+RUN cat /somefile.txt
