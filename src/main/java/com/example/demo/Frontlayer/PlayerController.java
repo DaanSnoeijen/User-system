@@ -14,7 +14,7 @@ public class PlayerController {
     PlayerLog playerLog = new PlayerLog();
 
     //Get request voor het inloggen van een speler
-    @GetMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
+    @PostMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
     public PlayerLoggIn ReturnPlayer(@RequestBody LogInData logInData){
         Player p = playerLog.LogIn(logInData.Username, logInData.Password);
 

@@ -24,6 +24,8 @@ public class PlayerDAL implements IPlayer {
 
         try{
             transaction.begin();
+            PlayerEntity entity = em.find(PlayerEntity.class, 1L);
+            playerDTO = new PlayerDTO(entity);
             transaction.commit();
         }
         catch (Exception ex){
