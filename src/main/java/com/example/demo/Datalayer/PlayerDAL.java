@@ -7,6 +7,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 @Component
 public class PlayerDAL implements IPlayer {
@@ -22,9 +25,16 @@ public class PlayerDAL implements IPlayer {
         em = factory.createEntityManager();
         transaction = em.getTransaction();
 
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<PlayerEntity> query = builder.createQuery(PlayerEntity.class);
+        Root<PlayerEntity> root = query.from(PlayerEntity.class);
+        query.select(root)
+                .where(builder.like(root.get("username"), player.getUsername()))
+                .where(builder.like(root.get("password"), player.getPassword()));
+
         try{
             transaction.begin();
-            PlayerEntity entity = em.find(PlayerEntity.class, 1L);
+            PlayerEntity entity = em.createQuery(query).getSingleResult();
             playerDTO = new PlayerDTO(entity);
             transaction.commit();
         }

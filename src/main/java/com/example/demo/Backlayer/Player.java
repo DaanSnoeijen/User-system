@@ -1,15 +1,18 @@
 package com.example.demo.Backlayer;
 
 import com.example.demo.Datalayer.PlayerDTO;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter @Setter
 public class Player {
 
-    public String username;
-    public String password;
-    public int elo;
-    public List<String> PlayedGames;
+    private String username;
+    private String password;
+    private int elo;
+    private List<String> PlayedGames;
 
     //Constructor voor inloggen
     public Player(String playerUsername, String playerPassword) {
@@ -19,9 +22,9 @@ public class Player {
 
     //Constructor voor DTO
     public Player (PlayerDTO playerDTO){
-        username = playerDTO.username;
-        password = playerDTO.password;
-        elo = playerDTO.elo;
-        PlayedGames = playerDTO.PlayedGames;
+        username = playerDTO.getUsername();
+        password = playerDTO.getPassword();
+        elo = playerDTO.getElo();
+        PlayedGames = playerDTO.getPlayedGames();
     }
 }

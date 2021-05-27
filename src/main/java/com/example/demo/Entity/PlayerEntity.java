@@ -30,10 +30,10 @@ public class PlayerEntity implements Serializable {
 
     //Constructor voor de player DTO
     public PlayerEntity(PlayerDTO player) {
-        this.username = player.username;
-        this.password = player.password;
-        this.elo = player.elo;
-        this.playedGames = player.PlayedGames;
+        this.username = player.getUsername();
+        this.password = player.getPassword();
+        this.elo = player.getElo();
+        this.playedGames = player.getPlayedGames();
     }
 
     //Lege constructor
