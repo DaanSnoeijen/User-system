@@ -13,15 +13,15 @@ class PlayerLogTests {
         //Arrange
         PlayerLog playerLog = new PlayerLog();
         Player playerCheck = new Player("Bob", "BobsPassword");
-        playerCheck.elo = 800;
+        playerCheck.setElo(800);
 
         //Act
         Player player = playerLog.Register("Bob", "BobsPassword");
 
         //Assert
-        if (player.username == playerCheck.username
-            && player.password == playerCheck.password
-            && player.elo == playerCheck.elo)
+        if (player.getUsername() == playerCheck.getUsername()
+            && player.getPassword() == playerCheck.getPassword()
+            && player.getElo() == playerCheck.getElo())
             assert true;
         else assert false;
     }
@@ -31,15 +31,15 @@ class PlayerLogTests {
         //Arrange
         PlayerLog playerLog = new PlayerLog();
         Player playerCheck = new Player("Jack", "JacksPassword");
-        playerCheck.elo = 900;
+        playerCheck.setElo(900);
 
         //Act
         Player player = playerLog.Register("Bob", "BobsPassword");
 
         //Assert
-        if (player.username != playerCheck.username
-                && player.password != playerCheck.password
-                && player.elo != playerCheck.elo)
+        if (player.getUsername() != playerCheck.getUsername()
+                && player.getPassword() != playerCheck.getPassword()
+                && player.getElo() != playerCheck.getElo())
             assert true;
         else assert false;
     }
@@ -52,33 +52,31 @@ class PlayerLogTests {
         
         //Act
         Player playerCheck = new Player(
-                playerLog.LogIn(player.username, player.password).username,
-                playerLog.LogIn(player.username, player.password).password);
+                playerLog.LogIn(player.getUsername(), player.getPassword()).getUsername(),
+                playerLog.LogIn(player.getUsername(), player.getPassword()).getPassword());
         
         //Assert
-        if (player.username == playerCheck.username
-                && player.password == playerCheck.password)
+        if (player.getUsername() == playerCheck.getUsername()
+                && player.getPassword() == playerCheck.getPassword())
             assert true;
         else assert false;
     }
 
     @Test
     void PlayerLogFalse() {
-        /*
         //Arrange
         PlayerLog playerLog = new PlayerLog();
         Player player = new Player("Bob", "BobsPassword");
 
         //Act
         Player playerCheck = new Player(
-                playerLog.LogIn(player.username, player.password).username,
-                playerLog.LogIn(player.username, player.password).password);
+                playerLog.LogIn(player.getUsername(), player.getPassword()).getUsername(),
+                playerLog.LogIn(player.getUsername(), player.getPassword()).getPassword());
 
         //Assert
-        if (player.username != playerCheck.username
-                && player.password != playerCheck.password)
+        if (player.getUsername() != playerCheck.getUsername()
+                && player.getPassword() != playerCheck.getPassword())
             assert true;
         else assert false;
-         */
     }
 }

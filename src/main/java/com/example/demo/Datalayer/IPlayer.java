@@ -1,10 +1,9 @@
 package com.example.demo.Datalayer;
 
-import com.example.demo.Backlayer.Player;
-import com.example.demo.Datalayer.PlayerDTO;
-
 public interface IPlayer {
-    PlayerDTO GetPlayer(Player player);
+    //Interface methode voor spelers ophalen uit de database
+    PlayerDTO GetPlayer(PlayerDTO player);
 
-    void AddPlayer(Player player);
+    //Interface methode voor spelers opslaan in een database
+    void AddPlayer(PlayerDTO player);
 }

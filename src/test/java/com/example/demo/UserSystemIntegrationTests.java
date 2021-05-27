@@ -15,8 +15,8 @@ public class UserSystemIntegrationTests {
         PlayerController pc = new PlayerController();
         LogInData data = new LogInData();
 
-        data.Username = "Bob";
-        data.Password = "BobsPassword";
+        data.setPassword("Bob");
+        data.setPassword("BobsPassword");
 
         //Act
         try {
@@ -39,8 +39,8 @@ public class UserSystemIntegrationTests {
 
         PlayerLoggIn player;
 
-        data.Username = "Bob";
-        data.Password = "BobsPassword";
+        data.setPassword("Bob");
+        data.setPassword("BobsPassword");
 
         //Act
         pc.AddPlayer(data);
@@ -48,7 +48,7 @@ public class UserSystemIntegrationTests {
         player = pc.ReturnPlayer(data);
 
         //Assert
-        if (player.username.equals("Bob")) assert true;
+        if (player.getUsername().equals("Bob")) assert true;
         else assert false;
     }
 
@@ -61,11 +61,11 @@ public class UserSystemIntegrationTests {
 
         PlayerLoggIn player;
 
-        data.Username = "Bob";
-        data.Password = "BobsPassword";
+        data.setPassword("Bob");
+        data.setPassword("BobsPassword");
 
-        dataFalse.Username = "Carl";
-        dataFalse.Password = "Admin";
+        dataFalse.setUsername("Carl");
+        dataFalse.setPassword("Admin");
 
         //Act
         pc.AddPlayer(data);
@@ -73,7 +73,7 @@ public class UserSystemIntegrationTests {
         player = pc.ReturnPlayer(dataFalse);
 
         //Assert
-        if (player.username.equals("Bob")) assert true;
+        if (player.getUsername().equals("Bob")) assert true;
         else assert false;
     }
 }
