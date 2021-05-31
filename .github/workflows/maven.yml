@@ -2,9 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ AlphaReleaseV0.1 ]
-  pull_request:
-    branches: [ AlphaReleaseV0.1 ]
+    branches: [ main ]
 
 jobs:
 
