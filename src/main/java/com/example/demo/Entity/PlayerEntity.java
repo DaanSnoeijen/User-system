@@ -11,7 +11,7 @@ import java.util.List;
 
 //Player entity voor het mappen van de player data naar een database
 @Entity @Getter @Setter
-public class PlayerEntity implements Serializable {
+public class PlayerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
