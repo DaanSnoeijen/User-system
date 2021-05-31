@@ -17,12 +17,13 @@ public class PlayerDAL implements IPlayer {
 
     private PlayerDTO playerDTO;
 
-    private final static EntityManagerFactory factory = Persistence.createEntityManagerFactory("user-system");
+    private static EntityManagerFactory factory;
     private EntityManager em = null;
     private EntityTransaction transaction = null;
 
     //Spelers ophalen uit de database
     public PlayerDTO GetPlayer(PlayerDTO player){
+        factory = Persistence.createEntityManagerFactory("user-system");
         em = factory.createEntityManager();
         transaction = em.getTransaction();
 
@@ -50,6 +51,7 @@ public class PlayerDAL implements IPlayer {
             transaction.rollback();
         }
         finally {
+            factory.close();
             em.close();
             transaction = null;
         }
@@ -59,6 +61,7 @@ public class PlayerDAL implements IPlayer {
 
     //Spelers toevoegen aan de database
     public void AddPlayer(PlayerDTO player){
+        factory = Persistence.createEntityManagerFactory("user-system");
         em = factory.createEntityManager();
         transaction = em.getTransaction();
 
@@ -72,6 +75,7 @@ public class PlayerDAL implements IPlayer {
             transaction.rollback();
         }
         finally {
+            factory.close();
             em.close();
             transaction = null;
         }
