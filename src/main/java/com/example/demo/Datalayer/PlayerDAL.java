@@ -32,9 +32,9 @@ public class PlayerDAL implements IPlayer {
         Root<PlayerEntity> root = query.from(PlayerEntity.class);
 
         Predicate predicateUsername
-                = builder.like(root.get("Username"), player.getUsername());
+                = builder.like(root.get("username"), player.getUsername());
         Predicate predicatePassword
-                = builder.like(root.get("Password"), player.getPassword());
+                = builder.like(root.get("password"), player.getPassword());
         Predicate predicateLogIn
                 = builder.and(predicateUsername, predicatePassword);
 

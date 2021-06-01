@@ -20,13 +20,13 @@ public class PlayerDTO {
         username = player.getUsername();
         password = player.getPassword();
         elo = player.getElo();
-        PlayedGames = player.getPlayedGames();
+        //PlayedGames = player.getPlayedGames();
     }
 
     public PlayerDTO(PlayerEntity player){
         username = player.getUsername();
         password = player.getPassword();
         elo = player.getElo();
-        PlayedGames = player.getPlayedGames();
+        //PlayedGames = player.getPlayedGames();
     }
 }

@@ -26,6 +26,7 @@ public class PlayerEntity {
     private int elo;
 
     @ElementCollection
+    @Column(nullable = false)
     private List<String> playedGames;
 
     //Constructor voor de player DTO
@@ -33,7 +34,7 @@ public class PlayerEntity {
         this.username = player.getUsername();
         this.password = player.getPassword();
         this.elo = player.getElo();
-        this.playedGames = player.getPlayedGames();
+        //this.playedGames = player.getPlayedGames();
     }
 
     //Lege constructor
