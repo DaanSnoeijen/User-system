@@ -25,6 +25,6 @@ public class Player {
         username = playerDTO.getUsername();
         password = playerDTO.getPassword();
         elo = playerDTO.getElo();
-        PlayedGames = playerDTO.getPlayedGames();
+        //PlayedGames = playerDTO.getPlayedGames();
     }
 }

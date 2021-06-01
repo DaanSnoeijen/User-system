@@ -15,6 +15,6 @@ public class PlayerLoggIn {
     public PlayerLoggIn(String Username, int Elo, List<String> playedGames){
         username = Username;
         elo = Elo;
-        PlayedGames = playedGames;
+        //PlayedGames = playedGames;
     }
 }

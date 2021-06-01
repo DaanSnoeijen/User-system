@@ -17,9 +17,12 @@ public class PlayerLog {
 
     //Nieuwe spelers aanmaken van een preset ELO
     public Player Register(String username, String password){
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Test");
+
         player = new Player(username, password);
         player.setElo(800);
-        player.setPlayedGames(new ArrayList());
+        player.setPlayedGames(list);
 
         PlayerDTO playerDTO = new PlayerDTO(player);
 
