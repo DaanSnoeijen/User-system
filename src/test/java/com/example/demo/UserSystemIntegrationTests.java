@@ -6,6 +6,7 @@ import com.example.demo.Datalayer.MockDAL;
 import com.example.demo.Frontlayer.LogInData;
 import com.example.demo.Frontlayer.PlayerController;
 import com.example.demo.Frontlayer.PlayerLoggIn;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -21,17 +22,20 @@ public class UserSystemIntegrationTests {
         data.setPassword("Bob");
         data.setPassword("BobsPassword");
 
+        boolean assertion = false;
+
         //Act
         try {
             pc.AddPlayer(data);
 
             //Assert
-            assert true;
+            assertion = true;
         }
         catch (Exception e){
             //Assert
-            assert false;
+            assertion = false;
         }
+        Assert.assertTrue(assertion);
     }
 
     @Test
@@ -46,14 +50,16 @@ public class UserSystemIntegrationTests {
         data.setUsername("Bob");
         data.setPassword("BobsPassword");
 
+        boolean assertion = false;
+
         //Act
         pc.AddPlayer(data);
 
         player = pc.ReturnPlayer(data);
 
         //Assert
-        if (player.getUsername().equals("Bob")) assert true;
-        else assert false;
+        if (player.getUsername().equals("Bob")) assertion = true;
+        Assert.assertTrue(assertion);
     }
 
     @Test
@@ -72,13 +78,15 @@ public class UserSystemIntegrationTests {
         dataFalse.setUsername("Carl");
         dataFalse.setPassword("Admin");
 
+        boolean assertion = false;
+
         //Act
         pc.AddPlayer(data);
 
         player = pc.ReturnPlayer(dataFalse);
 
         //Assert
-        if (player.getUsername().equals("Bob")) assert true;
-        else assert false;
+        if (player.getUsername().equals("Bob")) assertion = true;
+        Assert.assertTrue(assertion);
     }
 }
