@@ -1,0 +1,12 @@
+com\example\demo\Backlayer\Player.class
+com\example\demo\Datalayer\MockDAL.class
+com\example\demo\Datalayer\PlayerDTO.class
+com\example\demo\Backlayer\PlayerLog.class
+com\example\demo\Backlayer\IPlayerLog.class
+com\example\demo\UserSystemApplication.class
+com\example\demo\Frontlayer\LogInData.class
+com\example\demo\Datalayer\PlayerDAL.class
+com\example\demo\Frontlayer\PlayerLoggIn.class
+com\example\demo\Datalayer\IPlayer.class
+com\example\demo\Entity\PlayerEntity.class
+com\example\demo\Frontlayer\PlayerController.class
