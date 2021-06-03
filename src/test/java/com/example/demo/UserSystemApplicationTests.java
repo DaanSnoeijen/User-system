@@ -5,6 +5,7 @@ import com.example.demo.Backlayer.Player;
 import com.example.demo.Backlayer.PlayerLog;
 import com.example.demo.Datalayer.IPlayer;
 import com.example.demo.Datalayer.MockDAL;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 class PlayerLogTests {
@@ -17,6 +18,8 @@ class PlayerLogTests {
         Player playerCheck = new Player("Bob", "BobsPassword");
         playerCheck.setElo(800);
 
+        boolean assertion = false;
+
         //Act
         Player player = playerLog.Register("Bob", "BobsPassword");
 
@@ -24,8 +27,8 @@ class PlayerLogTests {
         if (player.getUsername() == playerCheck.getUsername()
             && player.getPassword() == playerCheck.getPassword()
             && player.getElo() == playerCheck.getElo())
-            assert true;
-        else assert false;
+            assertion = true;
+        Assert.assertTrue(assertion);
     }
 
     @Test
@@ -36,6 +39,8 @@ class PlayerLogTests {
         Player playerCheck = new Player("Jack", "JacksPassword");
         playerCheck.setElo(900);
 
+        boolean assertion = false;
+
         //Act
         Player player = playerLog.Register("Bob", "BobsPassword");
 
@@ -43,8 +48,8 @@ class PlayerLogTests {
         if (player.getUsername() != playerCheck.getUsername()
                 && player.getPassword() != playerCheck.getPassword()
                 && player.getElo() != playerCheck.getElo())
-            assert true;
-        else assert false;
+            assertion = true;
+        Assert.assertTrue(assertion);
     }
 
     @Test
@@ -53,6 +58,8 @@ class PlayerLogTests {
         IPlayer mockRepo = new MockDAL();
         IPlayerLog playerLog = new PlayerLog(mockRepo);
         Player player = new Player("Bob", "BobsPassword");
+
+        boolean assertion = false;
 
         //Act
         playerLog.Register("Bob", "BobsPassword");
@@ -63,8 +70,8 @@ class PlayerLogTests {
         //Assert
         if (player.getUsername() == playerCheck.getUsername()
                 && player.getPassword() == playerCheck.getPassword())
-            assert true;
-        else assert false;
+            assertion = true;
+        Assert.assertTrue(assertion);
     }
 
     @Test
@@ -73,6 +80,8 @@ class PlayerLogTests {
         IPlayer mockRepo = new MockDAL();
         IPlayerLog playerLog = new PlayerLog(mockRepo);
         Player player = new Player("Bob", "BobsPassword");
+
+        boolean assertion = false;
 
         //Act
         playerLog.Register("Jack", "JacksPassword");
@@ -83,7 +92,7 @@ class PlayerLogTests {
         //Assert
         if (player.getUsername() != playerCheck.getUsername()
                 && player.getPassword() != playerCheck.getPassword())
-            assert true;
-        else assert false;
+            assertion = true;
+        Assert.assertTrue(assertion);
     }
 }
