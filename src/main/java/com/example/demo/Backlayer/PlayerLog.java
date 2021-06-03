@@ -6,7 +6,7 @@ import com.example.demo.Datalayer.PlayerDTO;
 
 import java.util.ArrayList;
 
-public class PlayerLog {
+public class PlayerLog implements IPlayerLog {
     private Player player;
     IPlayer iPlayer;
 
@@ -14,6 +14,8 @@ public class PlayerLog {
     public PlayerLog(){
         iPlayer = new PlayerDAL();
     }
+
+    public PlayerLog(IPlayer iplayer) { iPlayer = iplayer; }
 
     //Nieuwe spelers aanmaken van een preset ELO
     public Player Register(String username, String password){

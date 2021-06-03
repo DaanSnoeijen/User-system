@@ -2,6 +2,7 @@ package com.example.demo.Frontlayer;
 
 import com.example.demo.Backlayer.Player;
 import com.example.demo.Backlayer.PlayerLog;
+import com.example.demo.Datalayer.IPlayer;
 import org.springframework.web.bind.annotation.*;
 
 //Controller voor de connectie met de frontend en backend
@@ -11,7 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class PlayerController {
     PlayerLoggIn player;
 
-    PlayerLog playerLog = new PlayerLog();
+    PlayerLog playerLog;
+
+    public PlayerController() { playerLog = new PlayerLog(); }
+
+    public PlayerController(IPlayer mockRepo) { playerLog = new PlayerLog(mockRepo); }
 
     //Get request voor het inloggen van een speler
     @PostMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
