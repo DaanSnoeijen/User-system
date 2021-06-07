@@ -17,4 +17,8 @@ public class MockDAL implements IPlayer {
     public void AddPlayer(PlayerDTO player){
         mockRepo.add(player);
     }
+
+    public void UpdatePlayer(int ID, PlayerDTO player) { }
+
+    public void DeletePlayer(int ID) { }
 }

@@ -42,4 +42,17 @@ public class PlayerLog implements IPlayerLog {
 
         return player;
     }
+
+    //Speler updaten
+    public void Update(int id, String username, String password, int elo){
+        Player player = new Player(username, password);
+        player.setElo(elo);
+
+        PlayerDTO playerDTO = new PlayerDTO(player);
+
+        iPlayer.UpdatePlayer(id, playerDTO);
+    }
+
+    //Speler verwijderen
+    public void Delete(int id){ iPlayer.DeletePlayer(id); }
 }
