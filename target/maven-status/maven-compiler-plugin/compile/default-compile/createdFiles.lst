@@ -1,7 +1,9 @@
 com\example\demo\Backlayer\Player.class
 com\example\demo\Datalayer\MockDAL.class
 com\example\demo\Datalayer\PlayerDTO.class
+com\example\demo\Frontlayer\UpdateData.class
 com\example\demo\Backlayer\PlayerLog.class
+com\example\demo\Frontlayer\DeleteData.class
 com\example\demo\Backlayer\IPlayerLog.class
 com\example\demo\UserSystemApplication.class
 com\example\demo\Frontlayer\LogInData.class

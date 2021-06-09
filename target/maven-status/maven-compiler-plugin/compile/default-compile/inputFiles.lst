@@ -1,5 +1,6 @@
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\PlayerDTO.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Backlayer\PlayerLog.java
+D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\DeleteData.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\PlayerDAL.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\IPlayer.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\UserSystemApplication.java
@@ -10,6 +11,7 @@ D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\Player_
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Backlayer\Player.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\AdminEntity.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\PlayerEntity.java
+D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\UpdateData.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\MockDAL.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\PlayerController.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\PlayerLoggIn.java
