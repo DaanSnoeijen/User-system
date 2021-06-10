@@ -91,10 +91,10 @@ public class PlayerDAL implements IPlayer {
         CriteriaUpdate<PlayerEntity> update = builder.createCriteriaUpdate(PlayerEntity.class);
         Root<PlayerEntity> root = update.from(PlayerEntity.class);
 
-        if (player.getUsername() != "" && player.getUsername() != null){
+        if (!player.getUsername().equals("") && player.getUsername() != null){
             update.set("username", player.getUsername());
         }
-        if (player.getPassword() != "" && player.getPassword() != null){
+        if (!player.getPassword().equals("") && player.getPassword() != null){
             update.set("password", player.getPassword());
         }
         update.set("elo", player.getElo());
