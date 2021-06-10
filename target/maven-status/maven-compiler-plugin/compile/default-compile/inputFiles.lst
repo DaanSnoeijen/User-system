@@ -3,11 +3,11 @@ D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Backlayer\Play
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\DeleteData.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\PlayerDAL.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Datalayer\IPlayer.java
-D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\PlayerTournament.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\UserSystemApplication.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\TournamentEntity.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Backlayer\IPlayerLog.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Frontlayer\LogInData.java
+D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\Player_Tournament.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Backlayer\Player.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\AdminEntity.java
 D:\Useless\GithubFiles\User-system\src\main\java\com\example\demo\Entity\PlayerEntity.java

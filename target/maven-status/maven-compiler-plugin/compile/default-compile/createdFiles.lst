@@ -10,8 +10,8 @@ com\example\demo\Frontlayer\LogInData.class
 com\example\demo\Datalayer\PlayerDAL.class
 com\example\demo\Entity\TournamentEntity.class
 com\example\demo\Frontlayer\PlayerLoggIn.class
-com\example\demo\Entity\PlayerTournament.class
 com\example\demo\Datalayer\IPlayer.class
 com\example\demo\Entity\AdminEntity.class
+com\example\demo\Entity\Player_Tournament.class
 com\example\demo\Entity\PlayerEntity.class
 com\example\demo\Frontlayer\PlayerController.class
