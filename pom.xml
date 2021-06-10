@@ -18,6 +18,7 @@
         <sonar.projectKey>DaanSnoeijen_User-system</sonar.projectKey>
         <sonar.organization>daansnoeijen</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.coverage.jacoco.xmlReportPaths>D:\Useless\GithubFiles\User-system\target\site\jacoco</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <dependencies>
