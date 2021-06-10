@@ -18,7 +18,7 @@ public class PlayerController {
 
     public PlayerController(IPlayer mockRepo) { playerLog = new PlayerLog(mockRepo); }
 
-    //Get request voor het inloggen van een speler
+    //Post request voor het inloggen van een speler
     @PostMapping(value="/getPlayer", consumes = "application/json", produces = "application/json")
     public PlayerLoggIn ReturnPlayer(@RequestBody LogInData logInData){
         Player p = playerLog.LogIn(logInData.getUsername(), logInData.getPassword());
@@ -32,5 +32,17 @@ public class PlayerController {
     @PostMapping(value="/postPlayer", consumes = "application/json")
     public void AddPlayer(@RequestBody LogInData logInData){
         playerLog.Register(logInData.getUsername(), logInData.getPassword());
+    }
+
+    //Post request voor het updaten van een speler
+    @PostMapping(value="/updatePlayer", consumes = "application/json")
+    public void UpdatePlayer(@RequestBody UpdateData updateData){
+        playerLog.Update(updateData.getId(), updateData.getUsername(), updateData.getPassword(), updateData.getElo());
+    }
+
+    //Post request voor het deleten van een speler
+    @PostMapping(value="/deletePlayer", consumes = "application/json")
+    public void DeletePlayer(@RequestBody DeleteData deleteData){
+        playerLog.Delete(deleteData.getId());
     }
 }
