@@ -18,8 +18,8 @@
         <sonar.projectKey>DaanSnoeijen_User-system</sonar.projectKey>
         <sonar.organization>daansnoeijen</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.coverage.jacoco.xmlReportPaths></sonar.coverage.jacoco.xmlReportPaths>
-        <sonar.junit.reportPaths></sonar.junit.reportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>User-system\target\site\jacoco\jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.junit.reportPaths>User-system\target\site\jacoco\jacoco.xml</sonar.junit.reportPaths>
     </properties>
 
     <dependencies>
