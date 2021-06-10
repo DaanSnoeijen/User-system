@@ -1,8 +1,6 @@
 package com.example.demo.Datalayer;
 
 import com.example.demo.Entity.PlayerEntity;
-import com.example.demo.Entity.Player_Tournament;
-import com.example.demo.Entity.TournamentEntity;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
@@ -14,8 +12,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class PlayerDAL implements IPlayer {
