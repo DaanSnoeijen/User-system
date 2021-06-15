@@ -143,42 +143,4 @@ public class PlayerDAL implements IPlayer {
             transaction = null;
         }
     }
-
-//    public PlayerDTO GetPlayerTournament(int ID){
-//        factory = Persistence.createEntityManagerFactory("user-system");
-//        em = factory.createEntityManager();
-//        transaction = em.getTransaction();
-//
-//        CriteriaBuilder builder = em.getCriteriaBuilder();
-//        CriteriaQuery<PlayerEntity> query = builder.createQuery(PlayerEntity.class);
-//        Root<PlayerEntity> root = query.from(PlayerEntity.class);
-//        Root<Player_Tournament> PTroot = query.from(Player_Tournament.class);
-//        Root<TournamentEntity> Troot = query.from(TournamentEntity.class);
-//        Join<PlayerEntity, Player_Tournament> betweenJoin = root.join(String.valueOf(Player_Tournament.class), JoinType.INNER);
-//        Join<PlayerEntity, TournamentEntity> endJoin = root.join(String.valueOf(TournamentEntity.class), JoinType.INNER);
-//
-//        List<Predicate> predicates = new ArrayList<>();
-//        predicates.add(builder.equal(root.get("Id"), ID));
-//        predicates.add(builder.equal(PTroot.get("Id"), ID));
-//
-//
-//
-//        try{
-//            transaction.begin();
-//            PlayerEntity entity = em.createQuery(query).getSingleResult();
-//            playerDTO = new PlayerDTO(entity);
-//            transaction.commit();
-//        }
-//        catch (Exception ex){
-//            ex.printStackTrace();
-//            transaction.rollback();
-//        }
-//        finally {
-//            factory.close();
-//            em.close();
-//            transaction = null;
-//        }
-//
-//        return playerDTO;
-//    }
 }
